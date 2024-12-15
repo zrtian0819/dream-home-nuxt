@@ -1,0 +1,17 @@
+// 全域的樣式表
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.test {
+    // 測試模式
+    border: 1px solid #ccc;
+}
+
+.hello {
+    background: black;
+    font-size: 50px;
+    color: white;
+}
