@@ -1,8 +1,15 @@
 // 全域的樣式表
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+$pri: #8fb7d3;
+$sec: #eec996;
+$acc: #b7d4c6;
+$neu: #f8e6de;
+$bgc: #fffdf6;
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .test {
@@ -10,8 +17,60 @@
     border: 1px solid #ccc;
 }
 
-.hello {
-    background: black;
-    font-size: 50px;
-    color: white;
+.zrt-btn {
+    background-color: $sec;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    position: relative;
+
+    &:active {
+        scale: 0.98;
+    }
+
+    // &::before {
+    //     content: '';
+    //     display: inline-block;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-color: #acc;
+    // }
+}
+
+.zrt-normal-input {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid $pri;
+    transition: 0.2s;
+    overflow: hidden;
+
+    &::placeholder {
+        position: relative;
+        transition: 1s;
+        left: 0;
+    }
+
+    &:focus {
+        border: 1px solid $sec;
+
+        &::placeholder {
+            left: 110%;
+            opacity: 0;
+        }
+    }
+}
+
+
+@keyframes fading-appear {
+    0% {
+        opacity: 0;
+        translate: 0 -10px;
+    }
+
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
 }
