@@ -1,6 +1,20 @@
-{
+{   
+    "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.suggest.showWords": true,
+  "editor.suggest.showSnippets": true,
+  "tailwindCSS.includeLanguages": {
+    "vue": "html"
+  },
+  // "emmet.includeLanguages": {
+  //   "vue-html": "html",
+  //   "vue": "html"
+  // },
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
-    "vue.features.takeOverMode.enabled": true,
 }

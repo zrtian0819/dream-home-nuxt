@@ -12,9 +12,10 @@ $bgc: #fffdf6;
     font-optical-sizing: auto;
 }
 
-.test {
+.test,
+.test * {
     // 測試模式
-    border: 1px solid #ccc;
+    border: 1px solid #aaa;
 }
 
 .zrt-btn {
@@ -22,21 +23,35 @@ $bgc: #fffdf6;
     letter-spacing: 1.5px;
     font-weight: bold;
     position: relative;
+    padding: 10px;
 
     &:active {
         scale: 0.98;
     }
 
-    // &::before {
-    //     content: '';
-    //     display: inline-block;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     background-color: #acc;
-    // }
+    &:hover {
+        &::before {
+            opacity: 1;
+            transform: scale(1);
+            animation: btn-rotate 2s infinite linear;
+            transition: 0.5s;
+        }
+    }
+
+    &::before {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        transition: 0.5s;
+        transform: scale(0);
+        top: -5px; // 讓它比按鈕稍大
+        left: -5px;
+        width: calc(100% + 10px); // 比按鈕寬度大 10px
+        height: calc(100% + 10px); // 比按鈕高度大 10px
+        background: linear-gradient(45deg, #ff590c, #ffe522 50%); // 自訂漸層
+        border-radius: inherit; // 確保與按鈕的邊角保持一致
+        z-index: -1; // 確保它在 `.zrt-btn` 之下
+    }
 }
 
 .zrt-normal-input {
@@ -72,5 +87,15 @@ $bgc: #fffdf6;
     100% {
         opacity: 1;
         translate: 0 0;
+    }
+}
+
+@keyframes btn-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }

@@ -20,9 +20,11 @@
         placeholder="密碼"
       />
 
-      <button class="zrt-btn py-3">登入</button>
+      <button class="zrt-btn">登入</button>
     </form>
   </div>
+
+  <Footer />
 </template>
 
 <script setup lang="ts">
