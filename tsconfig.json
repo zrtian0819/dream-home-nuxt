@@ -1,4 +1,73 @@
+// {
+//   "extends": "./.nuxt/tsconfig.json",
+//   "compilerOptions": {
+//     "target": "ESNext",
+//     "module": "ESNext",
+//     "moduleResolution": "Node",
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "jsx": "preserve",
+//     "types": ["@nuxt/schema", "vue", "@types/node"]
+//   },
+//   "include": ["nuxt.config.ts", "pages", "components", "layouts", "plugins", "store", "composables"],
+//   "exclude": ["node_modules", ".nuxt", "dist"]
+// }
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  // 繼承 Nuxt 生成的 TypeScript 設定
+  "extends": "./.nuxt/tsconfig.json",
+
+  "compilerOptions": {
+    // 關閉嚴格的可選屬性類型檢查 (設定為 true 時，可選屬性會被推斷為 undefined | T)
+    "exactOptionalPropertyTypes": false,
+
+    // 啟用實驗性的裝飾器 (主要用於 Vue Class Component 或 NestJS 等框架)
+    "experimentalDecorators": true,
+
+    // 生成對應的 .map 文件，方便 Debug 時對應回原始 TypeScript 代碼
+    "sourceMap": true,
+
+    // 移除編譯輸出的註解，讓最終產出的 JavaScript 更乾淨
+    "removeComments": true,
+
+    // 允許對 Iterator 物件進行降階編譯，支援 ES5/ES3
+    "downlevelIteration": true,
+
+    // 若有錯誤則不輸出 `.js` 檔案，確保程式碼無誤才會編譯
+    "noEmitOnError": true,
+
+    // 允許從沒有 `default` export 的模組導入內容
+    "allowSyntheticDefaultImports": true,
+
+    // 確保檔案大小寫一致，避免大小寫錯誤導致的跨平台問題 (如 Windows vs. Linux)
+    "forceConsistentCasingInFileNames": true,
+
+    // 禁止變數或函式參數使用 `any` 類型，強制使用明確的類型定義
+    "noImplicitAny": true,
+
+    // 在 `catch` 區塊中，變數必須顯式定義型別，而不是隱式推斷為 `any`
+    "useUnknownInCatchVariables": true,
+
+    // 啟用 `strict mode` (嚴格模式)，確保更嚴格的 TypeScript 檢查
+    "alwaysStrict": true,
+
+    // 禁止未使用的區域變數，提升程式碼品質
+    "noUnusedLocals": true,
+
+    // 禁止函數內未使用的參數，避免多餘的變數
+    "noUnusedParameters": true,
+
+    // 確保所有函式都有 `return`，避免部分程式碼路徑沒有回傳值
+    "noImplicitReturns": true,
+
+    // 防止 `switch` 語句中的 case 語句沒有 `break` 時意外繼續執行下一個 case
+    "noFallthroughCasesInSwitch": true,
+
+    // 禁止以索引方式存取物件的屬性，強制使用 `obj["key"]` 來避免潛在錯誤
+    "noPropertyAccessFromIndexSignature": true,
+
+    // 跳過類型庫 (`node_modules/@types/`) 的檢查，加速編譯過程
+    "skipLibCheck": true
+  }
 }

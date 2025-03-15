@@ -42,7 +42,7 @@ $bgc: #fffdf6;
 .zrt-normal-input {
     border-radius: 5px;
     outline: none;
-    border: 1px solid $pri;
+    border: 2px solid $pri;
     transition: 0.2s;
     overflow: hidden;
 
@@ -53,7 +53,7 @@ $bgc: #fffdf6;
     }
 
     &:focus {
-        border: 1px solid $sec;
+        border: 2px solid $sec;
 
         &::placeholder {
             left: 110%;
